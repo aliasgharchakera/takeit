@@ -10,6 +10,15 @@
     "@redwoodjs/auth-dbauth-setup": "6.1.0",
     "@redwoodjs/core": "6.1.0"
   },
+  "scripts": {
+    "story": "yarn rw storybook",
+    "studio": "yarn rw prisma studio",
+    "migrate": "yarn rw prisma migrate dev",
+    "db:push": "yarn rw prisma db push",
+    "db:reset": "yarn rw prisma db push --force-reset --accept-data-loss && yarn rw prisma db seed",
+    "modules:clear": "rimraf node_modules && rimraf yarn.lock && cd web && rimraf node_modules && cd ../api && rimraf node_modules && cd ..",
+    "modules:reset": "yarn modules:clear && yarn install"
+  },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
     "root": true

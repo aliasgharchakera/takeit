@@ -1,5 +1,4 @@
 # README
-Tera baap
 Welcome to [RedwoodJS](https://redwoodjs.com)!
 
 > **Prerequisites**

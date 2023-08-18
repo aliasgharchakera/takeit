@@ -10,15 +10,48 @@ generator client {
 
 // Define your own datamodels here and run `yarn redwood prisma migrate dev`
 // to create migrations for them and apply to your dev DB.
-// TODO: Please remove the following example:
+
+enum Role {
+  admin
+  user
+}
+
+enum Condition {
+  new
+  used
+}
+
 model User {
   id                  Int       @id @default(autoincrement())
   name                String?
   email               String    @unique
+  contactNo           String?
+  role                Role    @default(user)
+  createdAt           DateTime  @default(now())
+  posts               Post[]
+  items               Item[]
   hashedPassword      String
   salt                String
   resetToken          String?
   resetTokenExpiresAt DateTime?
+  favoritePosts       Post[]    @relation("UserFavoritePosts")
+}
+
+model Item {
+  id        Int      @id @default(autoincrement())
+  name      String
+  description String
+  condition Condition
+  owner     User     @relation(fields: [ownerId], references: [id])
+  ownerId   Int
+  category  Category @relation(fields: [categoryId], references: [id])
+  categoryId Int
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+  name      String
+  items     Item[]
 }
 
 model Post {
@@ -26,4 +59,7 @@ model Post {
   title     String
   body      String
   createdAt DateTime @default(now())
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int      @default(1)
+  favoritedBy User[] @relation("UserFavoritePosts")
 }

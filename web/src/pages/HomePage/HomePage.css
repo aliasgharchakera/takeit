@@ -1,11 +1,11 @@
 .heading-flex{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70vh;
 }
 
-.logout-flex{
-  width: 15%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.heading-flex h1{
+  margin: 0 auto;
 }

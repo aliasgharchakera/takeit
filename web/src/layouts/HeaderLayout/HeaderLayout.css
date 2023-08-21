@@ -1,0 +1,35 @@
+.header-container{
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.header-color{
+  background-color: var(--primary-color);
+}
+
+.header-links{
+  background-color: var(--bg-color);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header-links a{
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+}
+
+.logout-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+}
+

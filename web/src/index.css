@@ -1,6 +1,9 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #23262f;
+  margin: 0 0;
 }
+
 ul {
   list-style-type: none;
   margin: 1rem 0;
@@ -47,4 +50,9 @@ input.error, textarea.error {
 }
 .flex-between button {
   display: inline;
+}
+
+:root{
+  --primary-color: #508A7B;
+  --bg-color: #23262f;
 }

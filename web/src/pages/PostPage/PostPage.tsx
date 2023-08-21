@@ -1,3 +1,5 @@
+import './PostPage.css'
+
 import {
   Form,
   TextField,
@@ -15,7 +17,7 @@ const PostPage = () => {
   }
 
   return (
-    <>
+    <div className="main-post-form-container">
       <MetaTags title="Post" description="Post page" />
       <h1>Post an Ad</h1>
       <Form onSubmit={onSubmit} config={{ mode: 'onBlur' }}>
@@ -24,7 +26,7 @@ const PostPage = () => {
         </Label>
         <TextField
           name="item-name"
-          validation={{ required: true }}
+          // validation={{ required: true }}
           errorClassName="form-error"
         />
         <FieldError name="item-name" className="error" />
@@ -33,7 +35,7 @@ const PostPage = () => {
         </Label>
         <TextAreaField
           name="item-description"
-          validation={{ required: true }}
+          // validation={{ required: true }}
           errorClassName="form-error"
         />
         <FieldError name="item-description" className="error" />
@@ -42,7 +44,7 @@ const PostPage = () => {
       <p>
         <Link to={routes.home()}>Return home</Link>
       </p>
-    </>
+    </div>
   )
 }
 
